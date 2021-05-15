@@ -1,0 +1,96 @@
+mysql>create database project;
+
+mysql> use project;
+
+mysql> create table admin(
+     name varchar(30),
+     emailID varchar(40),
+     password varchar(20),
+     primary key(name));
+
+
+mysql> create table sales_d(
+       sno int(11),
+       invoiceno int(11),
+       item varchar(20),
+       primary key(sno));
+
+mysql> create table sales_m(
+      cust_name varchar(100),
+      dop date,
+      payment varchar(50),
+      amount decimal(10,2),
+      invoiceno int(11),
+      primary key(invoiceno));
+
+mysql> create table songs(
+      name varchar(100),
+      artist varchar(40),
+      genre varchar(20),
+      year varchar(4),
+      price decimal(5,2),
+      stocks int(200));
+
+mysql> create table users(
+      name varchar(30),
+      emailID varchar(40),
+      password varchar(20),
+      primary key(name));
+/////// COPY Till HERE /////
+
+mysql> desc songs;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| name   | varchar(100) | YES  |     | NULL    |       |
+| artist | varchar(40)  | YES  |     | NULL    |       |
+| genre  | varchar(20)  | YES  |     | NULL    |       |
+| year   | varchar(4)   | YES  |     | NULL    |       |
+| price  | decimal(5,2) | YES  |     | NULL    |       |
+| stocks | int(200)     | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+6 rows in set (0.06 sec)
+
+mysql> desc admin;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| name     | varchar(30) | NO   | PRI | NULL    |       |
+| emailID  | varchar(40) | YES  |     | NULL    |       |
+| password | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc users;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| name     | varchar(30) | NO   | PRI | NULL    |       |
+| emailID  | varchar(40) | YES  |     | NULL    |       |
+| password | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc sales_m;
++-----------+---------------+------+-----+---------+-------+
+| Field     | Type          | Null | Key | Default | Extra |
++-----------+---------------+------+-----+---------+-------+
+| cust_name | varchar(100)  | YES  |     | NULL    |       |
+| dop       | date          | YES  |     | NULL    |       |
+| payment   | varchar(50)   | YES  |     | NULL    |       |
+| amount    | decimal(10,2) | YES  |     | NULL    |       |
+| invoiceno | int(11)       | NO   | PRI | NULL    |       |
++-----------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc sales_d;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| sno       | int(11)     | NO   | PRI | NULL    |       |
+| invoiceno | int(11)     | YES  |     | NULL    |       |
+| item      | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
